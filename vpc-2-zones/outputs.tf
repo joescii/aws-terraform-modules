@@ -28,3 +28,6 @@ output "zone_B_public_cidr_block" {
 output "packer_sg_id" {
   value = "${aws_security_group.packer.id}"
 }
+output "bastion_accessible_sg_id" {
+  value = "${aws_security_group.bastion_accessible.id}"
+}

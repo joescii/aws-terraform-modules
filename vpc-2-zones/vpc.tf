@@ -147,6 +147,20 @@ resource "aws_instance" "bastion" {
   subnet_id = "${aws_subnet.public-A.id}"
 }
 
+resource "aws_security_group" "bastion_accessible" {
+  name = "bastion-accessible"
+  description = "Allows SSH bastion host to communicate with private resources"
+
+  ingress {
+    from_port = 0
+    to_port = 65535
+    protocol = "tcp"
+    security_groups = ["${aws_security_group.bastion.id}"]
+  }
+
+  vpc_id = "${aws_vpc.default.id}"
+}
+
 # This security group allows you to use packer to build AMI images for your applications.
 resource "aws_security_group" "packer" {
 	name = "packer-sg"
