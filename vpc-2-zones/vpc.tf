@@ -34,6 +34,12 @@ resource "aws_security_group" "nat" {
     protocol = "tcp"
     cidr_blocks = ["${aws_subnet.private-B.cidr_block}"]
   }
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
   vpc_id = "${aws_vpc.default.id}"
 }
