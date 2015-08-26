@@ -153,6 +153,7 @@ resource "aws_instance" "bastion" {
   key_name = "${var.ec2_key_name}"
   security_groups = ["${aws_security_group.bastion.id}"]
   subnet_id = "${aws_subnet.public-A.id}"
+  associate_public_ip_address = "true"
 }
 
 resource "aws_security_group" "bastion_accessible" {
