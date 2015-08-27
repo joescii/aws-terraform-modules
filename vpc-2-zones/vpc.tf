@@ -139,6 +139,12 @@ resource "aws_security_group" "bastion" {
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["${aws_vpc.default.cidr_block}"]
+  }
 
   vpc_id = "${aws_vpc.default.id}"
 }
