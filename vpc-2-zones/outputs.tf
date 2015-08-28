@@ -1,6 +1,9 @@
 output "vpc_id" {
   value = "${aws_vpc.default.id}"
 }
+output "cidr_block" {
+  value = "${aws_vpc.default.cidr_block}"
+}
 output "zone_A_private_id" {
   value = "${aws_subnet.private-A.id}"
 }
