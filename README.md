@@ -30,7 +30,7 @@ module "vpc" {
 # Use the outputs in other resources...
 resource "aws_security_group" "my_sg" {
   name = "my-sg"
-	vpc_id = "${module.vpc.vpc_id}"
+  vpc_id = "${module.vpc.vpc_id}"
 }
 ```
 
@@ -38,7 +38,7 @@ resource "aws_security_group" "my_sg" {
 Defines region-specific resources in `us-west-1`.
 This module works well with `vpc-2-zones`.
 Other regions could be made to mirror this one as needed.
-Using this approach, you can have switch regions simply by changing the module `source`.
+Using this approach, you can switch regions simply by changing the module's `source`.
 
 ### Example
 ```
