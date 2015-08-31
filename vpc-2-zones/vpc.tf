@@ -1,9 +1,3 @@
-# This terraform file defines the bare basics needed to do anything useful in AWS.
-# You will get a VPC (your network), a pair of public subnets, a pair of private 
-# subnets (all private addresses netmask 255.255.128.0), a network address 
-# translation (NAT) EC2 instance, and an SSH bastion host for creating SSH tunnels
-# to your private IP addresses as needed.
-
 resource "aws_vpc" "default" {
   cidr_block = "10.0.0.0/16"
   enable_dns_support = true
