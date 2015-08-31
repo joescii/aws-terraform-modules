@@ -9,7 +9,7 @@ resource "template_file" "ip_runner" {
   filename = "/dev/null"
   
   provisioner "local-exec" {
-    command = "curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' > ${var.ip_txt}"
+    command = "curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' | tr -d '\n' > ${var.ip_txt}"
   }
 }
 
