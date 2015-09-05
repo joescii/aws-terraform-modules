@@ -180,12 +180,25 @@ resource "aws_security_group" "packer" {
     from_port = 22
     to_port = 22
     protocol = "tcp"
-		cidr_blocks = ["${var.packer_sg_cidr_block}"]
+		cidr_blocks = ["${var.ci_server_cidr_block}"]
   }
   egress {
     from_port = 0
     to_port = 0
     protocol = "-1"
     cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+resource "aws_security_group" "ci_accessible" {
+	name = "ci-accessible-sg"
+	description = "Security Group for stuff that should be accessible from the CI server running terraform"
+	vpc_id = "${aws_vpc.default.id}"
+
+  ingress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+		cidr_blocks = ["${var.ci_server_cidr_block}"]
   }
 }

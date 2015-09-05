@@ -31,6 +31,12 @@ output "zone_B_public_cidr_block" {
 output "packer_sg_id" {
   value = "${aws_security_group.packer.id}"
 }
+output "ci_accessible_sg_id" {
+  value = "${aws_security_group.ci_accessible.id}"
+}
 output "bastion_accessible_sg_id" {
   value = "${aws_security_group.bastion_accessible.id}"
+}
+output "bastion_host" {
+  value = "${aws_instance.bastion.public_dns}"
 }

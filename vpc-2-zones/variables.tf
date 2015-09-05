@@ -7,6 +7,6 @@ variable "zone_A" {}
 variable "zone_B" {}
 variable "nat_ami" {}
 variable "bastion_ami" {}
-variable "packer_sg_cidr_block" {
+variable "ci_server_cidr_block" {
   default = "0.0.0.0/0"
 }
