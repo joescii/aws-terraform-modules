@@ -13,6 +13,9 @@ output "nat_ami" {
 output "bastion_ami" {
 	value = "ami-896d93cd"
 }
+output "enhanced_bastion_ami" {
+	value = "ami-cd01fb89"
+}
 output "ubuntu_precise_12_04_amd64" {
 	value = "ami-4bcf360f"
 }
