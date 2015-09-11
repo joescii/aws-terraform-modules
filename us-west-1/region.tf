@@ -14,7 +14,7 @@ output "bastion_ami" {
 	value = "ami-896d93cd"
 }
 output "enhanced_bastion_ami" {
-	value = "ami-135aa057"
+	value = "ami-3953a97d"
 }
 output "ubuntu_precise_12_04_amd64" {
 	value = "ami-4bcf360f"
