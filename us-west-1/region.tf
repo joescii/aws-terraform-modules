@@ -8,14 +8,14 @@ output "zone_B" {
   value = "us-west-1c"
 }
 output "nat_ami" {
-	value = "ami-ada746e9"
+	value = "ami-a8b7c4c8"
 }
 output "bastion_ami" {
-	value = "ami-896d93cd"
-}
-output "enhanced_bastion_ami" {
-	value = "ami-3953a97d"
+	value = "ami-fb394b9b"
 }
 output "ubuntu_precise_12_04_amd64" {
-	value = "ami-4bcf360f"
+	value = "ami-bd6a6bf8"
+}
+output "amazon_linux_hvm_ebs" {
+        value = "ami-d1f482b1"
 }
